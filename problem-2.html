@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // done
+        function checkName(name) {
+
+            if (!name || !isNaN(parseFloat(name)) || Array.isArray(name)) {
+                return "invalid";
+            }
+
+            const lowerCaseName = name.toLowerCase();
+
+            const goodNamesEnding = ["a", "y", "i", "e", "o", "u", "w"];
+
+            const namesEnding = lowerCaseName.charAt(lowerCaseName.length - 1);
+
+            if (goodNamesEnding.includes(namesEnding)) {
+                return "Good Name"
+            } else {
+                return "Bad Name"
+            }
+        };
+
+        const nameInput = "";
+
+        const result = checkName(nameInput);
+        console.log(result);
+    </script>
+</body>
+
+</html>

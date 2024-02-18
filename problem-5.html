@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // done 
+        
+        function monthlySavings(payments, livingCost) {
+
+            if (!Array.isArray(payments) || typeof livingCost !== "number") {
+                return "invalid input";
+            }
+
+            let totalIncome = 0;
+
+            for (const payment of payments) {
+                if (payment >= 3000) {
+                    totalIncome += payment * 0.8;
+                } else {
+                    totalIncome += payment;
+                }
+            }
+            
+            const totalSavings = totalIncome - livingCost;
+
+            return totalSavings >= 0 ? totalSavings : "earn more";
+        };
+
+        const payments = [ 900 , 2700 , 3400];
+        const livingCost = 10000;
+
+        const result = monthlySavings(payments, livingCost);
+        console.log(result);
+    </script>
+</body>
+
+</html>

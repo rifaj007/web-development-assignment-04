@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // done 
+
+        function calculateMoney(ticketSell) {
+
+            if (0 <= ticketSell) {
+                const totalMoney = ticketSell * 120;
+
+                const costOfgateKeeper = 500;
+                const costOfStuff = 8 * 50;
+
+                const totalCost = costOfgateKeeper + costOfStuff;
+
+                const moneyHave = totalMoney - totalCost;
+
+                return moneyHave;
+            } else {
+                return "Error! Invalid Input";
+            }
+        }
+
+        const ticketInput = prompt("Enter total ticket: ");
+
+        const output = calculateMoney(ticketInput);
+
+        console.log(output);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // done 
+
+        function deleteInvalids(array) {
+
+            if (!Array.isArray(array)) {
+                return "Invalid Array";
+            } else {
+                const filteredArray = [];
+                for (const element of array) {
+                    if (typeof element === 'number' && !Number.isNaN(element)) {
+                        filteredArray.push(element);
+                    }
+                }
+                return filteredArray;
+            }
+        };
+
+        const virusArray ={num: [ 1 , 2 , 3 ]} ;
+
+        const newArray = deleteInvalids(virusArray);
+
+        console.log(newArray);
+    </script>
+</body>
+
+</html>

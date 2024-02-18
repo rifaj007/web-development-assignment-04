@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // done 
+        
+        function password(obj) {
+
+            if (!("name" in obj && "birthYear" in obj && "siteName" in obj) ||
+                obj.birthYear.toString().length !== 4) {
+                return "invalid";
+            }
+
+            const password =
+                (obj.siteName.charAt(0).toUpperCase() + obj.siteName.slice(1)) +
+                "#" +
+                obj.name +
+                "@" +
+                obj.birthYear;
+
+            return password;
+        }
+
+        const myObject = {
+            name: "kolimuddin",
+            birthYear: 1999,
+            siteName: "google"
+        }
+
+        const result = password(myObject);
+        console.log(result);
+    </script>
+</body>
+
+</html>
